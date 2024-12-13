@@ -11,6 +11,8 @@ def main():
 def test_email():
     try:
         assert email("rAMya2@gmail.com") == "rAMya2@gmail.com"
+        assert email("ranyr!@2@gmail.com") == "Email is not valid."
+        assert email("ranfm!£@gmail.com") == "Email is not valid."
         assert email("Ramya@kent.ac.uk") == "Email is not valid."
     except (AssertionError):
         print("The email given is not correct.")
