@@ -35,4 +35,4 @@ def test_value_error_checks():
         student_data("wha2t")
 
 if __name__ == "__name__":
-    main()
+    main() 
