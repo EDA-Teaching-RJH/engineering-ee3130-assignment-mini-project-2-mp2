@@ -17,7 +17,8 @@ def main():
     code = input("Write a two digit number between 10-40:(P.S the code is any value below 30): ")   #Type a number between 10-29 to access data.
     secret_code(code)
     csv_main()              #Data only opened/created after secret code is passed.
-    choice = input(f"There are two types of exams.\nDo you want Theory or Practical student results: ").capitalize()
+    choice = input(f"There are two types of exams.\nDo you want Theory or Practical student results: ")
+    choice = choice.capitalize()
     plot(student_data(missing_student(choice)))
     
 def email(instructor_email):
