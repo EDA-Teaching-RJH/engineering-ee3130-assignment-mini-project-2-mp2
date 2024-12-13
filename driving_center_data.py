@@ -13,7 +13,7 @@ def main():
     print(f"DRIVERING CENTER INSTRUCTOR REPORT DATA \nHello, please enter your gmail and create a password to sign up.")
     email("")
     password("")
-    secret_code()
+    secret_code("")
     csv_main()              #Data only opened/created after secret code is passed.
     plot(student_data(missing_student("")))
     
@@ -52,12 +52,12 @@ def password(password):
         else:
             return password
 
-def secret_code():
+def secret_code(code):
     """
     This function lets the user type a number and if it's in range, they can access data.
     """
     code = input("Write a two digit number between 10-40:(P.S the code is any value below 30): ")   #Type a number between 10-29 to access data.
-    check = re.findall("[0-2][0-9]", code)
+    check = re.findall("[1-2][0-9]", code)
     if check:
         print("You entered the right code! You can access the data.")
     else:
