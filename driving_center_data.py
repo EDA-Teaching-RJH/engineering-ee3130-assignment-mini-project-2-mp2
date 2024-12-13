@@ -14,9 +14,11 @@ def main():
     instructor_email = input("Email: ").strip()
     email(instructor_email)
     password("")
-    secret_code("")
+    code = input("Write a two digit number between 10-40:(P.S the code is any value below 30): ")   #Type a number between 10-29 to access data.
+    secret_code(code)
     csv_main()              #Data only opened/created after secret code is passed.
-    plot(student_data(missing_student("")))
+    choice = input(f"There are two types of exams.\nDo you want Theory or Practical student results: ").capitalize()
+    plot(student_data(missing_student(choice)))
     
 def email(instructor_email):
     """
@@ -31,6 +33,7 @@ def email(instructor_email):
     while True:
         if re.search(r"^[a-zA-Z0-9]+@gmail.com$", instructor_email):
             print(instructor_email)
+            break
         else:
             print("Email is not valid.")
             instructor_email = input("Email: ").strip()
@@ -57,7 +60,6 @@ def secret_code(code):
     """
     This function lets the user type a number and if it's in range, they can access data.
     """
-    code = input("Write a two digit number between 10-40:(P.S the code is any value below 30): ")   #Type a number between 10-29 to access data.
     check = re.findall("[1-2][0-9]", code)
     if check:
         print("You entered the right code! You can access the data.")
@@ -75,7 +77,6 @@ def missing_student(choice):
     Returns:
     choice (str): The data chosen to view
     """
-    choice = input(f"There are two types of exams.\nDo you want Theory or Practical student results: ").capitalize()
     if choice == "Theory":
         return choice
     elif choice == "Practical":
@@ -94,6 +95,7 @@ def missing_student(choice):
             return choice
     else:
         raise ValueError("Invalid Test Type.")
+    
 
 def student_data(choice):
     """
