@@ -1,7 +1,6 @@
 import pygame
 import random
-pygame.init()
- 
+
 magenta = [71, 23, 63]
 icyblue  = [220, 246, 252]
 darkblue = [17, 9, 54]

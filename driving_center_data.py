@@ -11,7 +11,8 @@ days_score_coord_list = []  #Empty list to combine score_list and days_list to g
 
 def main():
     print(f"DRIVERING CENTER INSTRUCTOR REPORT DATA \nHello, please enter your gmail and create a password to sign up.")
-    email("")
+    instructor_email = input("Email: ").strip()
+    email(instructor_email)
     password("")
     secret_code("")
     csv_main()              #Data only opened/created after secret code is passed.
@@ -28,11 +29,11 @@ def email(instructor_email):
     instructor_email (str): User email saved
     """
     while True:
-        instructor_email = input("Email: ").strip()
         if re.search(r"^[a-zA-Z0-9]+@gmail.com$", instructor_email):
-            return instructor_email
+            print(instructor_email)
         else:
             print("Email is not valid.")
+            instructor_email = input("Email: ").strip()
 
 def password(password):
     """
